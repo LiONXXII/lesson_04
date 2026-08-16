@@ -44,6 +44,7 @@ def test_trim_positive(input_str, expected):
     ("", ""),
     (" ", ""),
     ("   ", ""),
+    (None, None),
     ("123abc", "123abc"),  # без пробелов ничего не меняется
 ])
 def test_trim_negative(input_str, expected):
@@ -91,6 +92,7 @@ def test_delete_symbol_positive(input_str, symbol, expected):
     ("", "a", ""),
     ("abc", "d", "abc"),  # символа нет - ничего не удаляется
     ("abc", "", "abc"),   # пустой символ
+    (None, "a", None),
     (" ", " ", ""),       # пробел как символ - удаляется
 ])
 def test_delete_symbol_negative(input_str, symbol, expected):

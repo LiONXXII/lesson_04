@@ -9,3 +9,23 @@ BUG-001
 Шаги воспроизведения:
 1. Создать объект StringUtils
 2. Вызвать contains("abc", "")
+
+BUG-002
+Метод: trim
+Описание: метод не обрабатывает значение None
+Ожидаемое поведение: при передаче None должен возвращать None или пустую строку
+Фактическое поведение: ошибка AttributeError: 'NoneType' object has no attribute 'startswith'
+Серьёзность: High
+Шаги воспроизведения:
+1. Создать объект StringUtils
+2. Вызвать trim(None)
+
+BUG-003
+Метод: delete_symbol
+Описание: метод не обрабатывает значение None (падение через contains)
+Ожидаемое поведение: при передаче None должен возвращать None или пустую строку
+Фактическое поведение: ошибка AttributeError: 'NoneType' object has no attribute 'index'
+Серьёзность: High
+Шаги воспроизведения:
+1. Создать объект StringUtils
+2. Вызвать delete_symbol(None, "a")
